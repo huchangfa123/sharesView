@@ -1,0 +1,22 @@
+.begin + .pagination{
+    width: 100%;
+    text-align: center;
+}
+.pagination li span{
+    border-radius: 50%;
+    margin: 10px;
+}
+.pagination a{
+    border-radius: 50%;
+    margin: 5px;
+}
+.btn {
+    border-radius: 50%;
+    float: left;
+}
+.title{
+    width: 100%;
+    text-align: center;
+    font-weight: 300;
+    float: left;
+}

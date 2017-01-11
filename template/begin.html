@@ -1,0 +1,101 @@
+<div class="begin">
+    <!--<div class="classify">-->
+        <!--<button ng-click ="c_all()">所有股票</button>-->
+        <!--<button ng-click ="c_shanghai()">上海股票</button>-->
+        <!--<button ng-click ="c_shenzhen()">深圳股票</button>-->
+    <!--</div>-->
+
+    <form name="outerForm" class="tab-form-demo">
+        <uib-tabset active="activeForm">
+            <uib-tab index="0" heading="所有股票" ng-click = "c_all()">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>股票编号</th>
+                        <th>股票名称</th>
+                        <th>开盘价格</th>
+                        <th>收盘价格</th>
+                        <th>交易量</th>
+                        <th>更新时间</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat=" x in show_data track by $index "
+                        ng-dblclick="click()"
+                        id={{x.id}}
+                    >
+                        <td>{{x.place}}{{x.number}}</td>
+                        <td>{{x.name}}</td>
+                        <td>{{x.opening_price}}</td>
+                        <td>{{x.now_price}}</td>
+                        <td>{{x.deal_shares}}
+                        <td>{{x.updata_time}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </uib-tab>
+            <uib-tab index="1" heading="上海股票" ng-click="c_shanghai()">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>股票编号</th>
+                        <th>股票名称</th>
+                        <th>开盘价格</th>
+                        <th>收盘价格</th>
+                        <th>交易量</th>
+                        <th>更新时间</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat=" x in show_data track by $index "
+                        ng-dblclick="click()"
+                        id={{x.id}}
+                    >
+                        <td>{{x.place}}{{x.number}}</td>
+                        <td>{{x.name}}</td>
+                        <td>{{x.opening_price}}</td>
+                        <td>{{x.now_price}}</td>
+                        <td>{{x.deal_shares}}
+                        <td>{{x.updata_time}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </uib-tab>
+            <uib-tab index="2" heading="深圳股票" ng-click="c_shenzhen()">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>股票编号</th>
+                        <th>股票名称</th>
+                        <th>开盘价格</th>
+                        <th>收盘价格</th>
+                        <th>交易量</th>
+                        <th>更新时间</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat=" x in show_data track by $index "
+                        ng-dblclick="click()"
+                        id={{x.id}}
+                    >
+                        <td>{{x.place}}{{x.number}}</td>
+                        <td>{{x.name}}</td>
+                        <td>{{x.opening_price}}</td>
+                        <td>{{x.now_price}}</td>
+                        <td>{{x.deal_shares}}
+                        <td>{{x.updata_time}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </uib-tab>
+        </uib-tabset>
+    </form>
+
+</div>
+<div class="pagination">
+    <ul uib-pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize"
+        items-per-page="contentSize" previous-text="<" next-text=">"
+        boundary-links="true" boundary-link-numbers="true"
+        ng-change ="pageChange()" >
+    </ul>
+</div>
